@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Model;
+namespace MarcelStrahl\SpotifyWebApiClient\Model;
 
 use Webmozart\Assert\Assert;
 

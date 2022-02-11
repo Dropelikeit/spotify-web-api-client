@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Facade;
+namespace MarcelStrahl\SpotifyWebApiClient\Facade;
 
 use GuzzleHttp\Client;
-use MarcelStrahl\SpotifyApiClient\Client\WebApiClient;
-use MarcelStrahl\SpotifyApiClient\Client\WebApiClientInterface;
-use MarcelStrahl\SpotifyApiClient\Model\AccessToken;
+use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient;
+use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClientInterface;
+use MarcelStrahl\SpotifyWebApiClient\Model\AccessToken;
 use Psr\Http\Message\RequestFactoryInterface;
 
 /**

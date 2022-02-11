@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Tests\Client\WebApiClient;
+namespace MarcelStrahl\SpotifyWebApiClient\Tests\Client\WebApiClient;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Laminas\Diactoros\Request;
 use Laminas\Diactoros\StreamFactory;
-use MarcelStrahl\SpotifyApiClient\Client\WebApiClient\WebApiAuth;
-use MarcelStrahl\SpotifyApiClient\Exception\WebApiAuthException;
-use MarcelStrahl\SpotifyApiClient\Model\Credentials;
+use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient\WebApiAuth;
+use MarcelStrahl\SpotifyWebApiClient\Exception\WebApiAuthException;
+use MarcelStrahl\SpotifyWebApiClient\Model\Credentials;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Model\SpotifyWeb;
+namespace MarcelStrahl\SpotifyWebApiClient\Model\SpotifyWeb;
 
 use function array_map;
 use DateTimeImmutable;

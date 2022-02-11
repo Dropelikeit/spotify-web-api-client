@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Exception;
+namespace MarcelStrahl\SpotifyWebApiClient\Exception;
 
 use Exception;
 use Throwable;

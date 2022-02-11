@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Tests\Facade;
+namespace MarcelStrahl\SpotifyWebApiClient\Tests\Facade;
 
-use MarcelStrahl\SpotifyApiClient\Client\WebApiClient\WebApiAuth;
-use MarcelStrahl\SpotifyApiClient\Facade\WebApiAuthFacade;
+use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient\WebApiAuth;
+use MarcelStrahl\SpotifyWebApiClient\Facade\WebApiAuthFacade;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;

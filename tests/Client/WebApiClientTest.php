@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Tests\Client;
+namespace MarcelStrahl\SpotifyWebApiClient\Tests\Client;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Laminas\Diactoros\Request;
 use Laminas\Diactoros\StreamFactory;
-use MarcelStrahl\SpotifyApiClient\Client\WebApiClient;
-use MarcelStrahl\SpotifyApiClient\Exception\FetchTrackException;
+use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient;
+use MarcelStrahl\SpotifyWebApiClient\Exception\FetchTrackException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;

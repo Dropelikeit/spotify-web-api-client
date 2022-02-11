@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Client;
+namespace MarcelStrahl\SpotifyWebApiClient\Client;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use JsonException;
-use MarcelStrahl\SpotifyApiClient\Exception\FetchTrackException;
-use MarcelStrahl\SpotifyApiClient\Model\Track;
+use MarcelStrahl\SpotifyWebApiClient\Exception\FetchTrackException;
+use MarcelStrahl\SpotifyWebApiClient\Model\Track;
 use Psr\Http\Message\RequestFactoryInterface;
 use Webmozart\Assert\Assert;
 

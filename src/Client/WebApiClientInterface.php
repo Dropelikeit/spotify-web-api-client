@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Client;
+namespace MarcelStrahl\SpotifyWebApiClient\Client;
 
-use MarcelStrahl\SpotifyApiClient\Model\Track;
+use MarcelStrahl\SpotifyWebApiClient\Model\Track;
 
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>

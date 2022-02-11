@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Client\WebApiClient;
+namespace MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient;
 
 use function base64_encode;
 use GuzzleHttp\ClientInterface;
@@ -9,9 +9,9 @@ use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use function json_decode;
 use JsonException;
-use MarcelStrahl\SpotifyApiClient\Exception\WebApiAuthException;
-use MarcelStrahl\SpotifyApiClient\Model\AccessToken;
-use MarcelStrahl\SpotifyApiClient\Model\Credentials;
+use MarcelStrahl\SpotifyWebApiClient\Exception\WebApiAuthException;
+use MarcelStrahl\SpotifyWebApiClient\Model\AccessToken;
+use MarcelStrahl\SpotifyWebApiClient\Model\Credentials;
 use Psr\Http\Message\RequestFactoryInterface;
 use function sprintf;
 use stdClass;

@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyApiClient\Model;
+namespace MarcelStrahl\SpotifyWebApiClient\Model;
 
 use function array_map;
-use MarcelStrahl\SpotifyApiClient\Model\SpotifyWeb\Album;
-use MarcelStrahl\SpotifyApiClient\Model\SpotifyWeb\Artist;
-use MarcelStrahl\SpotifyApiClient\Model\SpotifyWeb\AvailableMarket;
-use MarcelStrahl\SpotifyApiClient\Model\SpotifyWeb\ExternalId;
-use MarcelStrahl\SpotifyApiClient\Model\SpotifyWeb\ExternalUrl;
+use MarcelStrahl\SpotifyWebApiClient\Model\SpotifyWeb\Album;
+use MarcelStrahl\SpotifyWebApiClient\Model\SpotifyWeb\Artist;
+use MarcelStrahl\SpotifyWebApiClient\Model\SpotifyWeb\AvailableMarket;
+use MarcelStrahl\SpotifyWebApiClient\Model\SpotifyWeb\ExternalId;
+use MarcelStrahl\SpotifyWebApiClient\Model\SpotifyWeb\ExternalUrl;
 use Webmozart\Assert\Assert;
 
 /**
