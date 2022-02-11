@@ -1,0 +1,58 @@
+{
+  "name": "marcel-strahl/spotify-api-client",
+  "description": "An http client for interaction with the Spotify api written in php",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcel Strahl",
+      "email": "info@marcel-strahl.de"
+    }
+  ],
+  "require": {
+    "php": "^8.0|^8.1",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.4",
+    "guzzlehttp/psr7": "^2.1",
+    "laminas/laminas-diactoros": "^2.8",
+    "psr/http-message": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MarcelStrahl\\SpotifyApiClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MarcelStrahl\\SpotifyApiClient\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.6",
+    "phpstan/phpstan": "^1.4",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpstan/phpstan-webmozart-assert": "^1.0",
+    "phpunit/phpunit": "^9.5",
+    "psalm/plugin-phpunit": "^0.16.1",
+    "roave/security-advisories": "dev-latest",
+    "vimeo/psalm": "^4.20"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "scripts": {
+    "cs-check": "php-cs-fixer -v --dry-run --using-cache=no fix",
+    "cs-fix": "php-cs-fixer --using-cache=no fix",
+    "test": "vendor/bin/phpunit --configuration phpunit.xml.dist",
+    "psalm": "vendor/bin/psalm --no-cache",
+    "analyze": "vendor/bin/phpstan analyse --configuration phpstan.neon.dist",
+    "check": [
+      "@cs-check",
+      "@psalm",
+      "@analyze",
+      "@test"
+    ]
+  }
+}
