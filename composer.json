@@ -13,6 +13,7 @@
     "php": "^8.0|^8.1",
     "ext-curl": "*",
     "ext-json": "*",
+    "ext-simplexml": "*",
     "guzzlehttp/guzzle": "^7.4",
     "guzzlehttp/psr7": "^2.1",
     "laminas/laminas-diactoros": "^2.8",

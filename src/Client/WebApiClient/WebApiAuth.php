@@ -7,22 +7,20 @@ use function base64_encode;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use function json_decode;
 use JsonException;
+use MarcelStrahl\SpotifyWebApiClient\Client\Decoder;
 use MarcelStrahl\SpotifyWebApiClient\Exception\WebApiAuthException;
 use MarcelStrahl\SpotifyWebApiClient\Model\AccessToken;
 use MarcelStrahl\SpotifyWebApiClient\Model\Credentials;
+use MarcelStrahl\SpotifyWebApiClient\Stub\AccessTokenResponse;
 use Psr\Http\Message\RequestFactoryInterface;
 use function sprintf;
-use stdClass;
-use Webmozart\Assert\Assert;
 
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>
  */
-final class WebApiAuth implements WebApiAuthInterface
+final class WebApiAuth extends Decoder implements WebApiAuthInterface
 {
-    private const HTTP_METHOD_POST = 'POST';
     private const FETCH_ACCESS_TOKEN = '/api/token';
 
     private ClientInterface $guzzleClient;
@@ -42,7 +40,10 @@ final class WebApiAuth implements WebApiAuthInterface
      */
     public function loadAccessToken(Credentials $credentials): AccessToken
     {
-        $request = $this->requestFactory->createRequest(self::HTTP_METHOD_POST, self::FETCH_ACCESS_TOKEN)
+        $request = $this->requestFactory->createRequest(
+            self::REQUEST_METHOD_POST,
+            self::FETCH_ACCESS_TOKEN
+        )
             ->withHeader('Authorization', sprintf('Basic %s', $this->buildBearer($credentials)))
             ->withHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -60,19 +61,8 @@ final class WebApiAuth implements WebApiAuthInterface
             );
         }
 
-        $content = (string) $response->getBody();
-        Assert::stringNotEmpty($content);
-
         try {
-            $responseData = json_decode(
-                $content,
-                false,
-                512,
-                JSON_THROW_ON_ERROR
-            );
-
-            Assert::object($responseData);
-            Assert::isInstanceOf($responseData, stdClass::class);
+            $responseData = $this->decodePayload($response, AccessTokenResponse::class);
         } catch (JsonException $exception) {
             throw WebApiAuthException::createFromJsonException($exception);
         }

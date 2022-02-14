@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7\Response;
 use Laminas\Diactoros\Request;
 use Laminas\Diactoros\StreamFactory;
 use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient\WebApiAuth;
+use MarcelStrahl\SpotifyWebApiClient\Exception\MissingHeaderContentException;
 use MarcelStrahl\SpotifyWebApiClient\Exception\WebApiAuthException;
 use MarcelStrahl\SpotifyWebApiClient\Model\Credentials;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -123,7 +124,7 @@ final class WebApiAuthTest extends TestCase
      */
     public function cannotRetrieveBecauseJsonExceptionIsThrown(): void
     {
-        $this->expectException(WebApiAuthException::class);
+        $this->expectException(MissingHeaderContentException::class);
 
         $credentials = Credentials::create([
             'clientId' => 'identifier',

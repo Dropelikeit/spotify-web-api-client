@@ -13,30 +13,45 @@ Usage:
 declare(strict_types=1);
 
 use Laminas\Diactoros\RequestFactory;
-use MarcelStrahl\SpotifyApiClient\Client\WebApiClient;
-use MarcelStrahl\SpotifyApiClient\Facade\WebApiAuthFacade;
-use MarcelStrahl\SpotifyApiClient\Facade\WebApiClientFacade;
-use MarcelStrahl\SpotifyApiClient\Model\Credentials;
+use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient;
+use MarcelStrahl\SpotifyWebApiClient\Facade\SpotifyQrClientFacade;
+use MarcelStrahl\SpotifyWebApiClient\Facade\WebApiAuthFacade;
+use MarcelStrahl\SpotifyWebApiClient\Facade\WebApiClientFacade;
+use MarcelStrahl\SpotifyWebApiClient\Model\Credentials;
+use MarcelStrahl\SpotifyWebApiClient\Model\SpotifyQrClient\QrCodePreference;
 use Webmozart\Assert\Assert;
 
-require __DIR__. '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-$facade = new WebApiAuthFacade(new RequestFactory());
+$requestFactory = new RequestFactory();
+
+$facade = new WebApiAuthFacade($requestFactory);
 
 $authenticationClient = $facade->buildInstance();
 
 $accessToken = $authenticationClient->loadAccessToken(Credentials::create([
-    'clientId' => 'cd6dad42a04e48869014c2847c738d2e',
-    'clientSecret' => 'fd366c8acf3042c29f0937e66c3cada3',
+    'clientId' => '',
+    'clientSecret' => '',
 ]));
 
-$apiFacade = new WebApiClientFacade(new RequestFactory());
+$apiFacade = new WebApiClientFacade($requestFactory);
 $webApiClient = $apiFacade->buildInstance($accessToken);
 Assert::isInstanceOf($webApiClient, WebApiClient::class);
 
 $track = $webApiClient->getTrackById('4xkOaSrkexMciUUogZKVTS');
 
-var_dump($track);
+$qrClientFacade = new SpotifyQrClientFacade($requestFactory);
+$qrClient = $qrClientFacade->buildInstance();
+
+$qrClient->fetchQrCode(QrCodePreference::create(
+    '000000',
+    QrCodePreference::BAR_COLOR_WHITE,
+    640,
+    QrCodePreference::FORMAT_JPEG,
+    $track->getUri(),
+));
+
+var_dump($track, $file);
 ```
 
 ## Contribute

@@ -8,4 +8,6 @@ namespace MarcelStrahl\SpotifyWebApiClient\Client;
  */
 interface ClientInterface
 {
+    public const REQUEST_METHOD_GET = 'GET';
+    public const REQUEST_METHOD_POST = 'POST';
 }
