@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace MarcelStrahl\SpotifyWebApiClient\Tests\Facade;
 
+use MarcelStrahl\SpotifyWebApiClient\Client\Factory\WebApiClientFactory;
 use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient;
-use MarcelStrahl\SpotifyWebApiClient\Facade\WebApiClientFacade;
 use MarcelStrahl\SpotifyWebApiClient\Model\AccessToken;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -14,7 +14,7 @@ use stdClass;
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>
  */
-final class WebApiClientFacadeTest extends TestCase
+final class WebApiClientFactoryTest extends TestCase
 {
     /**
      * @psalm-var MockObject&RequestFactoryInterface
@@ -33,7 +33,7 @@ final class WebApiClientFacadeTest extends TestCase
      */
     public function canInitInstance(): void
     {
-        $facade = new WebApiClientFacade($this->requestFactory);
+        $facade = new WebApiClientFactory($this->requestFactory);
 
         $standardClass = new stdClass();
         $standardClass->access_token = 'daskdmkwamld';
