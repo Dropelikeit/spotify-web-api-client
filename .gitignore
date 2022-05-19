@@ -6,6 +6,12 @@ composer.phar
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 composer.lock
 
+### CS-Fixer
+.php-cs-fixer.cache
+
+### phpunit
+.phpunit.result.cache
+
 ### Jetbrains
 .idea/*
 .idea

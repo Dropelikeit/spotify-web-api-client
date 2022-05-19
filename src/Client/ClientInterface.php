@@ -5,6 +5,8 @@ namespace MarcelStrahl\SpotifyWebApiClient\Client;
 
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>
+ *
+ * @description Acts as a client marker of this library
  */
 interface ClientInterface
 {

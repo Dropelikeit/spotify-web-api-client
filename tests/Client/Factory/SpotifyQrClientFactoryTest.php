@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace MarcelStrahl\SpotifyWebApiClient\Tests\Facade;
 
+use MarcelStrahl\SpotifyWebApiClient\Client\Factory\SpotifyQrClientFactory;
 use MarcelStrahl\SpotifyWebApiClient\Client\SpotifyQrClient;
-use MarcelStrahl\SpotifyWebApiClient\Facade\SpotifyQrClientFacade;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -12,7 +12,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>
  */
-final class SpotifyQrClientFacadeTest extends TestCase
+final class SpotifyQrClientFactoryTest extends TestCase
 {
     /**
      * @psalm-var MockObject&RequestFactoryInterface
@@ -31,7 +31,7 @@ final class SpotifyQrClientFacadeTest extends TestCase
      */
     public function canInitInstance(): void
     {
-        $facade = new SpotifyQrClientFacade($this->requestFactory);
+        $facade = new SpotifyQrClientFactory($this->requestFactory);
 
         $client = $facade->buildInstance();
 
