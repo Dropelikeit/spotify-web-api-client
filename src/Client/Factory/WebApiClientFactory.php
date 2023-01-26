@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MarcelStrahl\SpotifyWebApiClient\Facade;
+namespace MarcelStrahl\SpotifyWebApiClient\Client\Factory;
 
 use GuzzleHttp\Client;
 use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient;
@@ -12,7 +12,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>
  */
-final class WebApiClientFacade
+final class WebApiClientFactory
 {
     private const BASE_URI = 'https://api.spotify.com';
 

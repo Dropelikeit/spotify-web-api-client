@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace MarcelStrahl\SpotifyWebApiClient\Tests\Facade;
 
+use MarcelStrahl\SpotifyWebApiClient\Client\Factory\WebApiAuthFactory;
 use MarcelStrahl\SpotifyWebApiClient\Client\WebApiClient\WebApiAuth;
-use MarcelStrahl\SpotifyWebApiClient\Facade\WebApiAuthFacade;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -12,7 +12,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 /**
  * @author Marcel Strahl <info@marcel-strahl.de>
  */
-final class WebApiAuthFacadeTest extends TestCase
+final class WebApiAuthFactoryTest extends TestCase
 {
     /**
      * @psalm-var MockObject&RequestFactoryInterface
@@ -31,7 +31,7 @@ final class WebApiAuthFacadeTest extends TestCase
      */
     public function canInitInstance(): void
     {
-        $facade = new WebApiAuthFacade($this->requestFactory);
+        $facade = new WebApiAuthFactory($this->requestFactory);
 
         $client = $facade->buildInstance();
 
